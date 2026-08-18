@@ -1,0 +1,125 @@
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background: #f5f5f5;
+	color: #111;
+}
+
+.Profile {
+	width: min(100% - 32px, 420px);
+	min-height: 100vh;
+	margin: auto;
+	padding: 72px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.ProfilePicture {
+	width: 128px;
+	height: 128px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+h1 {
+	margin: 18px 0 12px;
+	font-size: 30px;
+	letter-spacing: -1px;
+}
+
+.Bio {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;
+	margin-bottom: 30px;
+	color: #666;
+	font-size: 14px;
+	line-height: 1.35;
+}
+
+.Bio p {
+	margin: 0;
+}
+
+.Links {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.Links a {
+	width: 100%;
+	height: 54px;
+	padding: 0 18px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	background: #fff;
+	color: inherit;
+	font-weight: 600;
+	text-decoration: none;
+	transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.Links a:hover {
+	transform: translateY(-2px);
+	background: #fafafa;
+	border-color: #bbb;
+}
+
+.Links a:active {
+	transform: translateY(0);
+}
+
+.Links picture,
+.Links img {
+	width: 22px;
+	height: 22px;
+	display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #0d0d0d;
+		color: #f5f5f5;
+	}
+
+	.Bio {
+		color: #999;
+	}
+
+	.Links a {
+		background: #151515;
+		border-color: #292929;
+	}
+
+	.Links a:hover {
+		background: #1b1b1b;
+		border-color: #3a3a3a;
+	}
+}
+
+@media (max-width: 480px) {
+	.Profile {
+		padding-top: 48px;
+	}
+
+	.ProfilePicture {
+		width: 112px;
+		height: 112px;
+	}
+}
