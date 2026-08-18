@@ -1,5 +1,4 @@
 const Birthday = new Date(2008, 11, 19);
-
 const Today = new Date();
 
 let Age = Today.getFullYear() - Birthday.getFullYear();
