@@ -2,8 +2,7 @@
 	box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
 	min-height: 100%;
 }
 
@@ -15,7 +14,7 @@ body {
 }
 
 .Profile {
-	width: min(100% - 32px, 420px);
+	width: min(100% - 32px, 800px);
 	min-height: 100vh;
 	margin: auto;
 	padding: 72px 0;
@@ -53,7 +52,7 @@ h1 {
 }
 
 .Links {
-	width: 100%;
+	width: min(100%, 420px);
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -85,11 +84,82 @@ h1 {
 	transform: translateY(0);
 }
 
-.Links picture,
-.Links img {
+.Links picture, .Links img {
 	width: 22px;
 	height: 22px;
 	display: block;
+}
+
+.MemesSection {
+	width: 100%;
+	margin-top: 52px;
+	padding-top: 28px;
+	border-top: 1px solid #ddd;
+}
+
+.MemesSection[hidden] {
+	display: none;
+}
+
+.MemesSection h2 {
+	margin: 0 0 22px;
+	text-align: center;
+	font-size: 22px;
+	letter-spacing: -0.4px;
+}
+
+.MemeStatus {
+	margin: 0;
+	text-align: center;
+	color: #777;
+	font-size: 14px;
+}
+
+.Memes {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 256px);
+	justify-content: center;
+	gap: 16px;
+}
+
+.Memes a {
+	width: 256px;
+	height: 256px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	background: #eee;
+	text-decoration: none;
+	transition: transform 140ms ease, border-color 140ms ease;
+}
+
+.Memes a:hover {
+	transform: translateY(-4px);
+	border-color: #aaa;
+}
+
+.Memes a:active {
+	transform: translateY(-1px);
+}
+
+.Memes img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity 160ms ease, transform 180ms ease;
+}
+
+.Memes img.Loaded {
+	opacity: 1;
+}
+
+.Memes a:hover img {
+	transform: scale(1.02);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -111,9 +181,26 @@ h1 {
 		background: #1b1b1b;
 		border-color: #3a3a3a;
 	}
+
+	.MemesSection {
+		border-color: #292929;
+	}
+
+	.MemeStatus {
+		color: #888;
+	}
+
+	.Memes a {
+		background: #151515;
+		border-color: #292929;
+	}
+
+	.Memes a:hover {
+		border-color: #444;
+	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
 	.Profile {
 		padding-top: 48px;
 	}
@@ -121,5 +208,9 @@ h1 {
 	.ProfilePicture {
 		width: 112px;
 		height: 112px;
+	}
+
+	.Memes {
+		grid-template-columns: 256px;
 	}
 }

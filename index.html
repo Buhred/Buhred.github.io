@@ -16,6 +16,8 @@
 	<meta property="og:image" content="https://buhred.github.io/Images/ProfilePic.jpg">
 	<meta property="og:image:alt" content="Buhred">
 
+	<link rel="icon" type="image/jpeg" href="Images/ProfilePic.jpg">
+	<link rel="apple-touch-icon" href="Images/ProfilePic.jpg">
 	<link rel="stylesheet" href="style.css">
 </head>
 
@@ -60,6 +62,20 @@
 				<span>Twitter</span>
 			</a>
 		</nav>
+
+		<section class="MemesSection">
+			<h2>Memes</h2>
+
+			<p class="MemeStatus">Loading...</p>
+
+			<div class="Memes"></div>
+		</section>
+
+		<template id="Meme">
+			<a target="_blank" rel="noopener noreferrer">
+				<img loading="lazy">
+			</a>
+		</template>
 	</main>
 
 	<script src="script.js"></script>
