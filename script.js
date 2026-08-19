@@ -9,7 +9,6 @@ if (Today.getMonth() < Birthday.getMonth() || (Today.getMonth() === Birthday.get
 
 document.getElementById("Age").textContent = Age;
 
-// ???? why dont this work, maybe another push would help
 fetch("https://api.github.com/repos/Buhred/Buhred.github.io/contents/Memes").then(Response => Response.json()).then(Files => {
 	const Memes = document.querySelector(".Memes");
 	const Meme = document.getElementById("Meme");
